@@ -1,0 +1,10 @@
+Project Planning:
+1. Summarize the app("elevator pitch") / Identify CRUD entities.
+
+Entities: Users and (B)ads
+
+2. User stories:
+    Visitor, on landing page, can either register or login.
+
+   -
+
