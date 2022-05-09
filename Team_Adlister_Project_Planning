@@ -4,7 +4,38 @@ Project Planning:
 Entities: Users and (B)ads
 
 2. User stories:
-    Visitor, on landing page, can either register or login.
+   -Visitor will see description of app with an option to register for the site.
 
-   -
+   -Visitor, on landing page, can either register or login. (Validate login success/failure, with errors) Should contain 2 separate pages, one for "/registration", and one for "/login"
+
+
+   - User will be re-directed top dashboard page.
+       Dashboard will contain personal greeting, will advise user of his most recent contribution, as well as the most recent contribution to database.
+
+   - user will see a link on dashboard to re-direct to the form used to submit.
+
+   - user will have a link on dashboard to Logout.
+
+   -Search/display page will contain separate cards fot all villains.  Cards may also contain "Edit" function.
+
+   - As a user, application will be fitted for mobile device.
+
+   3. Building the database:
+        Villain Table
+            Villain name
+            Description: Why they are known as a villain
+            Origin: What universe and/or mythology
+            Id
+            User-id (Foreign Key - references Primary Key)
+            Image of villain
+        User Table
+            User id (Primary Key)
+            Username
+            Password
+
+
+
+
+
+
 
