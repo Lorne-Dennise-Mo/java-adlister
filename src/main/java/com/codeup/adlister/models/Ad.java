@@ -1,12 +1,13 @@
 package com.codeup.adlister.models;
 
-public class Ad {
+public class Bad {
     private long id;
     private long userId;
-    private String title;
+    private String name;
     private String description;
+    private String origin
 
-    public Ad(long id, long userId, String title, String description) {
+    public Bad(long id, long userId, String title, String description) {
         this.id = id;
         this.userId = userId;
         this.title = title;
