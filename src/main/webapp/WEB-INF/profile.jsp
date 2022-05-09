@@ -11,6 +11,8 @@
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
     </div>
+    <a href="/bads/create">Add a Bad</a>
+    <a href="/bads">See the Bads</a>
 
 </body>
 </html>
