@@ -11,14 +11,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "controllers.CreateAdServlet", urlPatterns = "/ads/create")
-public class CreateAdServlet extends HttpServlet {
+@WebServlet(name = "controllers.CreatebadServlet", urlPatterns = "/bads/create")
+public class CreateBadServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
         }
-        request.getRequestDispatcher("/WEB-INF/ads/create.jsp")
+        request.getRequestDispatcher("/WEB-INF/bads/create.jsp")
             .forward(request, response);
     }
 
@@ -31,6 +31,6 @@ public class CreateAdServlet extends HttpServlet {
                 request.getParameter("origin")
         );
         DaoFactory.getBadsDao().insert(bad);
-        response.sendRedirect("/ads");
+        response.sendRedirect("/bads");
     }
 }
