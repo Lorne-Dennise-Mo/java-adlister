@@ -3,7 +3,11 @@
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
-            <a class="navbar-brand" href="/ads">Adlister</a>
+            <c:if test="${user != null}">
+            <a class="navbar-brand" href="/bads">Badlister
+            </a>
+            </c:if>
+
         </div>
         <ul class="nav navbar-nav navbar-right">
             <c:if test="${user == null}">
