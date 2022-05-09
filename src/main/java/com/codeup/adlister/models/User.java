@@ -5,21 +5,21 @@ import com.codeup.adlister.util.Password;
 public class User {
     private long id;
     private String username;
-    private String email;
+//    private String email;
     private String password;
 
     public User() {}
 
-    public User(String username, String email, String password) {
+    public User(String username, String password) {
         this.username = username;
-        this.email = email;
+//        this.email = email;
         setPassword(password);
     }
 
-    public User(long id, String username, String email, String password) {
+    public User(long id, String username, String password) {
         this.id = id;
         this.username = username;
-        this.email = email;
+//        this.email = email;
         this.password = password;
     }
 
@@ -39,13 +39,13 @@ public class User {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
 
     public String getPassword() {
         return password;
