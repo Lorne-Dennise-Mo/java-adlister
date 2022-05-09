@@ -5,19 +5,21 @@ public class Bad {
     private long userId;
     private String name;
     private String description;
-    private String origin
+    private String origin;
 
-    public Bad(long id, long userId, String title, String description) {
-        this.id = id;
+    public Bad(long userId, String name, String description, String origin) {
         this.userId = userId;
-        this.title = title;
+        this.name = name;
         this.description = description;
+        this.origin = origin;
     }
 
-    public Ad(long userId, String title, String description) {
+    public Bad(long id, long userId, String name, String description, String origin) {
+        this.id = id;
         this.userId = userId;
-        this.title = title;
+        this.name = name;
         this.description = description;
+        this.origin = origin;
     }
 
     public long getId() {
@@ -36,12 +38,12 @@ public class Bad {
         this.userId = userId;
     }
 
-    public String getTitle() {
-        return title;
+    public String getName() {
+        return name;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getDescription() {
@@ -50,5 +52,13 @@ public class Bad {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public String getOrigin() {
+        return origin;
+    }
+
+    public void setOrigin(String origin) {
+        this.origin = origin;
     }
 }
