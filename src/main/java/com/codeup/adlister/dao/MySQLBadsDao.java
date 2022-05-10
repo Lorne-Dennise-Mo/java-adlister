@@ -14,9 +14,9 @@ public class MySQLBadsDao implements Bads {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUsername(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUsername(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -55,11 +55,11 @@ public class MySQLBadsDao implements Bads {
 
     private Bad extractBad(ResultSet rs) throws SQLException {
         return new Bad(
-            rs.getLong("id"),
-            rs.getLong("user_id"),
-            rs.getString("name"),
-            rs.getString("description"),
-            rs.getString("origin")
+                rs.getLong("id"),
+                rs.getLong("user_id"),
+                rs.getString("name"),
+                rs.getString("description"),
+                rs.getString("origin")
         );
     }
 
@@ -69,5 +69,31 @@ public class MySQLBadsDao implements Bads {
             bads.add(extractBad(rs));
         }
         return bads;
+    }
+
+//    @Override
+//    public Bad findById(Long id) {
+//        String query = "SELECT * FROM badlister_db.bads WHERE id = ? LIMIT 1";
+//        try {
+//            PreparedStatement stmt = connection.prepareStatement(query);
+//            stmt.setLong(1, id);
+//            return extractBad(stmt.executeQuery());
+//        } catch (SQLException e) {
+//            throw new RuntimeException("Error finding a bad", e);
+//        }
+//    }
+
+    @Override
+    public Bad findByBadName(String badname) {
+        String query = ("SELECT * FROM badlister_db.bads WHERE name = ? LIMIT 1");
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, badname);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractBad(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a bad", e);
+        }
     }
 }
