@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Bad;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
@@ -94,6 +95,23 @@ public class MySQLBadsDao implements Bads {
             return extractBad(rs);
         } catch (SQLException e) {
             throw new RuntimeException("Error finding a bad", e);
+        }
+    }
+
+//    public Bad deleteBad(String gonebad) {
+//        String query = ("DELETE * FROM badlister_db.bads WHERE")
+//    }
+
+    @Override
+    public List<Bad> userBads(User user) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM badlister_db.bads WHERE user_id = ? LIMIT 3");
+            stmt.setLong(1, user.getId());
+            ResultSet rs = stmt.executeQuery();
+            return createBadsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all bads.", e);
         }
     }
 }

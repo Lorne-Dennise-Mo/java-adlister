@@ -16,7 +16,12 @@
     <h3>${bad.description}</h3>
     <br>
     <h3>${bad.origin}</h3>
+    <form action="/bads" method="POST">
+        <button name="gonebad" value="${bad.name}"> bad go byebye?</button>
+    </form>
 
+    <a href="/profile">Back to Profile</a>
+    <a href="/bads/create">Add-a-Bad</a>
 
 </div>
 </body>

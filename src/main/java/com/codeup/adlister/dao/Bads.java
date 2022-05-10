@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Bad;
+import com.codeup.adlister.models.User;
 
 import java.util.List;
 
@@ -11,4 +12,6 @@ public interface Bads {
     Long insert(Bad bad);
 
     Bad findByBadName(String badname);
+
+    List<Bad> userBads(User user);
 }
