@@ -97,10 +97,18 @@ public class MySQLBadsDao implements Bads {
             throw new RuntimeException("Error finding a bad", e);
         }
     }
-
-//    public Bad deleteBad(String gonebad) {
-//        String query = ("DELETE * FROM badlister_db.bads WHERE")
-//    }
+    @Override
+    public String deleteBad(String gonebad) {
+        String query = ("DELETE FROM badlister_db.bads WHERE name = ?");
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, gonebad);
+            stmt.executeUpdate();
+            return "success";
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a bad", e);
+        }
+    }
 
     @Override
     public List<Bad> userBads(User user) {

@@ -22,6 +22,14 @@ public class BadViewServlet extends HttpServlet {
         req.getRequestDispatcher("WEB-INF/badview.jsp").forward(req, resp);
     }
 
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        String badname=req.getParameter("gonebad");
+        DaoFactory.getBadsDao().deleteBad(badname);
+        req.setAttribute("delete",true);
+        req.getRequestDispatcher("WEB-INF/badview.jsp").forward(req, resp);
+
+    }
 
     public static void main(String[] args) {
         System.out.println(DaoFactory.getBadsDao().findByBadName("Thanos"));

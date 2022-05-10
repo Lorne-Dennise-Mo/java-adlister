@@ -14,4 +14,10 @@ public interface Bads {
     Bad findByBadName(String badname);
 
     List<Bad> userBads(User user);
+
+    String deleteBad(String gonebad);
+
+
+
+
 }
