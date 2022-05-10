@@ -25,7 +25,9 @@
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>
-    <a href="/profile">Back to Dashboard</a>
+    <a href="/profile">Back to Profile</a>
     <a href="/bads">See the Bads</a>
+    <a href="/bads/create">Add another Bad</a>
+
 </body>
 </html>

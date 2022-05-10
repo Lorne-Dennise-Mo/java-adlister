@@ -24,7 +24,7 @@
     </c:forEach>
 </div>
 
-<a href="/profile">Back to Dashboard</a>
+<a href="/profile">Back to Profile</a>
 <a href="/bads/create">Add another Bad</a>
 
 </body>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -10,8 +11,17 @@
 
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
-    </div>
-    <a href="/bads/create">Add a Bad</a>
+        <c:forEach var="bad" items="${baddies}">
+        <div class="col-md-6">
+            <h2>${bad.name}</h2>
+            <p>${bad.description}</p>
+            <p>${bad.origin}</p>
+            <form action="/badview" method="GET">
+                <button name="badname" value="${bad.name}">view bad</button>
+            </form>
+        </div>
+        </c:forEach>
+    <a href="/bads/create">Add-a-Bad</a>
     <a href="/bads">See the Bads</a>
 
 </body>
