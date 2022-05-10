@@ -1,4 +1,5 @@
 package com.codeup.adlister.controllers;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 import com.codeup.adlister.dao.DaoFactory;
 import com.codeup.adlister.models.User;
@@ -16,7 +17,7 @@ public class RegisterServlet extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
     }
 
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String passwordConfirmation = request.getParameter("confirm_password");
@@ -24,11 +25,15 @@ public class RegisterServlet extends HttpServlet {
         // validate input
         boolean inputHasErrors = username.isEmpty()
 //            || email.isEmpty()
+                ||DaoFactory.getUsersDao().findByUsername(username)!= null
             || password.isEmpty()
             || (! password.equals(passwordConfirmation));
 
         if (inputHasErrors) {
-            response.sendRedirect("/register");
+            System.out.println("error");
+            request.setAttribute("userInvalid", true);
+            request.getRequestDispatcher("/WEB-INF/register.jsp").forward(request, response);
+//            response.sendRedirect("/register");
             return;
         }
 
