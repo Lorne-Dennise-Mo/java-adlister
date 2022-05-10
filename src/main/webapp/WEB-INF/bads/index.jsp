@@ -17,7 +17,9 @@
             <h2>${bad.name}</h2>
             <p>${bad.description}</p>
             <p>${bad.origin}</p>
-            <button>edit</button>
+            <form action="/badview" method="GET">
+            <button name="badname" value="${bad.name}">view bad</button>
+            </form>
         </div>
     </c:forEach>
 </div>

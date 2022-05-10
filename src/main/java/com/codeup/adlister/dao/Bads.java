@@ -9,4 +9,6 @@ public interface Bads {
     List<Bad> all();
     // insert a new ad and return the new ad's id
     Long insert(Bad bad);
+
+    Bad findByBadName(String badname);
 }
