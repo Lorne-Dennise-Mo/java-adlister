@@ -15,10 +15,17 @@ public class BadViewServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String badname = req.getParameter("badname");
-        Bad bad = DaoFactory.getBadsDao().findByBadName(badname);
-        req.setAttribute("bad", bad);
-        System.out.println(badname);
+
+        if (req.getParameter("badname")!=null) {
+            String badname = req.getParameter("badname");
+            Bad bad = DaoFactory.getBadsDao().findByBadName(badname);
+            req.setAttribute("bad", bad);
+        }
+        if (req.getParameter("search")!=null){
+            String badSearch=req.getParameter("search");
+            Bad bad1=DaoFactory.getBadsDao().findByBadName(badSearch);
+            req.setAttribute("badsearch",bad1);
+        }
         req.getRequestDispatcher("WEB-INF/badview.jsp").forward(req, resp);
     }
 
