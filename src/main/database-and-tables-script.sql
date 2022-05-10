@@ -10,6 +10,7 @@ CREATE TABLE IF NOT EXISTS users (
 
 );
 
+DROP TABLE IF EXISTS bads;
 
 CREATE TABLE IF NOT EXISTS bads (
     id INT unsigned NOT NULL AUTO_INCREMENT,
@@ -21,3 +22,19 @@ CREATE TABLE IF NOT EXISTS bads (
     FOREIGN KEY (user_id) REFERENCES users (id)
 );
 
+INSERT INTO bads (user_id, name, description, origin)
+VALUES (1, 'Freddy Krueger',
+        'Dream Demon - a serial child-killer who had been burnt to death by his victims parents',
+        'A Nightmare on Elm Street'),
+       (1,
+        'Darth Vader/Anakin Skywalker',
+        'Once a heroic Jedi Knight, Anakin was seduced by the dark side',
+        'Star Wars'),
+    (1,
+     'Thanos',
+     'The Mad Titan fell in love with Death and vowed to deliver as many souls to her as necessary to win her love',
+     'Marvel Comics'),
+       (1,
+        'Leatherface',
+        'Butcher and serial murderer that eats his victims and wheres their skin',
+        'Texas Chainsaw Massacre');
