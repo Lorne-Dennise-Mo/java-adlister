@@ -39,8 +39,7 @@
     <div class="form-group">
 
         <label for="origin">Edit Origin</label>
-        <textarea id="origin" name="editorigin" class="form-control" type="text">
-                </textarea>
+        <textarea id="origin" name="editorigin" class="form-control" type="text"></textarea>
     </div>
 
     <input type="submit" class="btn btn-block btn-primary">
