@@ -22,31 +22,35 @@ public class EditBadServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String badname=request.getParameter("editbad");
-        Bad bad=DaoFactory.getBadsDao().findByBadName(badname);
-        String name;
-        String description;
-        String origin;
 
-        if(request.getParameter("editname")==null){
-             name=bad.getName();
-        }else {
-            name= request.getParameter("editname");
+        String badname=request.getParameter("editbad");
+
+        Bad bad=DaoFactory.getBadsDao().findByBadName(badname);
+
+        request.setAttribute("bad",bad);
+
+
+        String name= badname;
+
+        String description= bad.getDescription();
+
+        String origin= bad.getOrigin();
+
+        if(request.getParameter("editname")!=null){
+            name=request.getParameter("editname");
         }
-        if(request.getParameter("editdescription")==null){
-            description=bad.getDescription();
-        }else {
-            description=request.getParameter("editdescription");
+
+        if(request.getParameter("editdescription")!=null) {
+            description = request.getParameter("editdescription");
         }
-        if(request.getParameter("editorigin")==null){
-            origin=bad.getOrigin();
-        }else {
-            origin=request.getParameter("editorigin");
+
+        if(request.getParameter("editorigin")!=null) {
+            origin = request.getParameter("editorigin");
         }
 
         DaoFactory.getBadsDao().editBad(name,description,origin,badname);
 
-        request.getRequestDispatcher("WEB-INF/editbad.jsp").forward(request, response);
+        response.sendRedirect("/bads");
 
 
 
