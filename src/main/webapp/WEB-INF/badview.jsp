@@ -31,8 +31,10 @@
             <br>
             <h3>${badsearch.origin}</h3>
             <form action="/badview" method="POST">
-                <button name="gonebad" value="${bad.name}"> bad go byebye?</button>
-            </form></c:if>
+                <button name="gonebad" value="${bad.name}"> Bad Go Byebye?</button>
+            </form>
+        <form action="/badedit" method="POST">
+            <button name="gonebad" value="${bad.name}"> Edit Bad</button></c:if>
 
     </c:if>
     <c:if test="${delete}"><h1>Your Bad has been Deleted</h1></c:if>
