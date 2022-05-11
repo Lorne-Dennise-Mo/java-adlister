@@ -86,7 +86,7 @@ public class MySQLBadsDao implements Bads {
 
     @Override
     public Bad findByBadName(String badname) {
-        String query = ("SELECT * FROM badlister_db.bads WHERE name = ? LIMIT 1");
+        String query = ("SELECT * FROM badlister_db.bads WHERE name LIKE  CONCAT( '%',?,'%') LIMIT 1");
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
             stmt.setString(1, badname);
@@ -110,7 +110,7 @@ public class MySQLBadsDao implements Bads {
         }
     }
     @Override
-    public String editBad(String name,String description,String origin,String bad) {
+    public String editBad(String name, String description, String origin, String bad) {
         String query = (" UPDATE badlister_db.bads SET name=? , description=?, origin=? WHERE name = ?");
         try {
             PreparedStatement stmt = connection.prepareStatement(query);
