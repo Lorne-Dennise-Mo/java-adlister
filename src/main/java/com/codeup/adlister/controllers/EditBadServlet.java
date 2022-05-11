@@ -27,32 +27,36 @@ public class EditBadServlet extends HttpServlet {
 
         Bad bad=DaoFactory.getBadsDao().findByBadName(badname);
 
-        request.setAttribute("bad",bad);
-
-
         String name= badname;
 
         String description= bad.getDescription();
 
-        String origin= bad.getOrigin();
+        String origin= request.getParameter("editorigin");
 
-        if(request.getParameter("editname")!=null){
+        if(!request.getParameter("editname").isEmpty()){
             name=request.getParameter("editname");
         }
 
-        if(request.getParameter("editdescription")!=null) {
+        if(!request.getParameter("editdescription").isEmpty()) {
             description = request.getParameter("editdescription");
         }
 
-        if(request.getParameter("editorigin")!=null) {
-            origin = request.getParameter("editorigin");
+        if(request.getParameter("editorigin").isEmpty()) {
+            origin = bad.getOrigin();
         }
 
         DaoFactory.getBadsDao().editBad(name,description,origin,badname);
 
         response.sendRedirect("/bads");
 
+        System.out.println(bad.getName());
+        System.out.println(badname);
+        System.out.println(name);
+        System.out.println(origin);
+
 
 
     }
+
+
 }
