@@ -10,6 +10,7 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container text-center">
     <c:if test="${delete==null}">
+        <c:if test="${badsearch==null}">
     <h1>Your Bad Info</h1>
     <h2>${bad.name}</h2>
     <h3>${bad.id}</h3>
@@ -19,7 +20,21 @@
     <h3>${bad.origin}</h3>
     <form action="/badview" method="POST">
         <button name="gonebad" value="${bad.name}"> bad go byebye?</button>
-    </form></c:if>
+    </form>
+    </c:if>
+
+        <c:if test="${bad==null}"><h1>Your Bad Info</h1>
+            <h2>${badsearch.name}</h2>
+            <h3>${badsearch.id}</h3>
+            <br>
+            <h3>${badsearch.description}</h3>
+            <br>
+            <h3>${badsearch.origin}</h3>
+            <form action="/badview" method="POST">
+                <button name="gonebad" value="${bad.name}"> bad go byebye?</button>
+            </form></c:if>
+
+    </c:if>
     <c:if test="${delete}"><h1>Your Bad has been Deleted</h1></c:if>
 
     <a href="/profile">Back to Profile</a>

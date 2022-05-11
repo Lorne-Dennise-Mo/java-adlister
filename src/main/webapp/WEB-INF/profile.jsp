@@ -21,6 +21,13 @@
             </form>
         </div>
         </c:forEach>
+        <form action="/badview" method="GET">
+        <div class="form-group">
+            <label for="search">Search</label>
+            <input id="search" name="search" class="form-control" type="text">
+            <input type="submit" class="btn btn-primary btn-block" value="search">
+        </div>
+    </form>
     <a href="/bads/create">Add-a-Bad</a>
     <a href="/bads">See the Bads</a>
 
