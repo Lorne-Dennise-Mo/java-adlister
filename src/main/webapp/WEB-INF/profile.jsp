@@ -17,7 +17,7 @@
             <p>${bad.description}</p>
             <p>${bad.origin}</p>
             <form action="/badview" method="GET">
-                <button class="btn btn-success" name="badname" value="${bad.name}">view bad</button>
+                <button class="btn btn-success text-nowrap" name="badname" value="${bad.name}">view bad</button>
             </form>
         </div>
         </c:forEach>

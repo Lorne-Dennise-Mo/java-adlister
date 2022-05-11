@@ -43,10 +43,10 @@
             <h3>${badsearch.origin}</h3>
 
             <form action="/badview" method="POST">
-                <button name="gonebad" value="${bad.name}"> Bad Go Byebye?</button>
+                <button name="gonebad" value="${bad.name}" class="btn btn-danger text-nowrap" id="deletebtn">Bad Go Byebye?</button>
             </form>
-            <form action="/badedit" method="Get">
-                <button name="editbad" value="${bad.name}"> Edit Bad</button>
+            <form action="/editbad" method="Get">
+                <button name="editbad" value="${bad.name}" class="btn btn-success text-nowrap"> Edit Bad</button>
             </form>
         </c:if>
 
@@ -57,5 +57,16 @@
     <a href="/bads/create">Add-a-Bad</a>
 
 </div>
+
+<script>
+    //prompt user if sure of deleting.
+    //not sure if it'll interfere with current functionality.
+   function deleteBTN(){
+	   let deletebtn = document.getElementById("deletebtn");
+	   deletebtn.addEventListener("click",()=>{
+
+       });
+   }
+</script>
 </body>
 </html>
