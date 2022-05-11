@@ -12,6 +12,10 @@ import java.io.IOException;
 public class EditBadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
         String badname=request.getParameter("editbad");
         Bad bad=DaoFactory.getBadsDao().findByBadName(badname);
         request.setAttribute("bad",bad);
