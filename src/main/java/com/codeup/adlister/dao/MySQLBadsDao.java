@@ -106,7 +106,7 @@ public class MySQLBadsDao implements Bads {
             stmt.executeUpdate();
             return "success";
         } catch (SQLException e) {
-            throw new RuntimeException("Error finding a bad", e);
+            throw new RuntimeException("Error Deleting a bad", e);
         }
     }
     @Override
@@ -121,7 +121,7 @@ public class MySQLBadsDao implements Bads {
             stmt.executeUpdate();
             return "success";
         } catch (SQLException e) {
-            throw new RuntimeException("Error finding a bad", e);
+            throw new RuntimeException("Error updating a bad", e);
         }
     }
 

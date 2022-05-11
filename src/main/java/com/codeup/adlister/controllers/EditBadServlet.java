@@ -8,12 +8,14 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "EditBadServlet", value = "/EditBadServlet")
+@WebServlet(name = "EditBadServlet", value = "/editbad")
 public class EditBadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String badname=request.getParameter("editbad");
-        request.getRequestDispatcher("WEB-INF/badview.jsp").forward(request, response);
+        Bad bad=DaoFactory.getBadsDao().findByBadName(badname);
+        request.setAttribute("bad",bad);
+        request.getRequestDispatcher("WEB-INF/editbad.jsp").forward(request, response);
 
 
     }
@@ -43,6 +45,9 @@ public class EditBadServlet extends HttpServlet {
         }
 
         DaoFactory.getBadsDao().editBad(name,description,origin,badname);
+
+        request.getRequestDispatcher("WEB-INF/editbad.jsp").forward(request, response);
+
 
 
     }
