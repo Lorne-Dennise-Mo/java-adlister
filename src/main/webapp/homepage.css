@@ -1,5 +1,26 @@
+
 body {
-    background-image: url("/img/homepageImage.png");
-    background-size: 100vw;
+    background-color: #000000;
+    background-image: url("/img/homepageImage.jpeg");
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    color: azure;
+}
+
+a {
+    color: #9678d0;
+    text-decoration: none;
+}
+
+button {
+
+}
+
+.maindiv, .homepage {
+    background-color: #000000;
+}
+
+.badlister-txt, a:hover {
+    color: #b9f700;
 }
 
