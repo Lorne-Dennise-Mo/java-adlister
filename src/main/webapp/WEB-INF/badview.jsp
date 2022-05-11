@@ -24,7 +24,7 @@
 
 
             <form action="/badview" method="POST">
-                <button name="gonebad" value="${bad.name}"> bad go byebye?</button>
+                <button name="gonebad" value="${bad.name}" class="btn btn-danger"> bad go byebye?</button>
             </form>
 
 
@@ -43,10 +43,10 @@
             <h3>${badsearch.origin}</h3>
 
             <form action="/badview" method="POST">
-                <button name="gonebad" value="${badsearch.name}" class="btn btn-danger text-nowrap" id="deletebtn">Bad Go Byebye?</button>
+                <button type="button" name="gonebad" value="${badsearch.name}" class="btn btn-danger text-nowrap" id="deletebtn">Bad Go Byebye?</button>
             </form>
             <form action="/editbad" method="Get">
-                <button name="editbad" value="${badsearch.name}" class="btn btn-success text-nowrap"> Edit Bad</button>
+                <button type="button" name="editbad" value="${badsearch.name}" class="btn btn-success text-nowrap" id="editbtn"> Edit Bad</button>
             </form>
         </c:if>
 
