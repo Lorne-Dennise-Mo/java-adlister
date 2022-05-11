@@ -5,19 +5,29 @@
     <jsp:include page="partials/head.jsp">
         <jsp:param name="title" value="Edit Bad"/>
     </jsp:include>
-
 </head>
 <body>
-    <div class="col-md-6">
-        <h1>Your Bad Info</h1>
-        <h2>${bad.name}</h2>
-        <h3>${bad.id}</h3>
-        <br>
-        <h3>${bad.description}</h3>
-        <br>
-        <h3>${bad.origin}</h3>
-    </div>
+<jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 
+<div class="mx-auto text-center w-auto">
+    <h1>Your <span class="badlister-txt">Bad</span> Info</h1>
+    <h2>Name:</h2>
+    ${bad.name}
+    <br>
+
+    <h2>Bad ID:</h2>
+    ${bad.id}
+    <br>
+
+    <h2>Description:</h2>
+    ${bad.description}
+    <br>
+
+    <h2>Origin:</h2>
+    ${bad.origin}
+</div>
+
+<div class="mx-auto w-auto">
     <h1>Edit bad Bad</h1>
 
     <form action="/editbad" method="post">
@@ -43,5 +53,6 @@
 
         <input type="submit" class="btn btn-block btn-primary">
     </form>
+</div>
 </body>
 </html>

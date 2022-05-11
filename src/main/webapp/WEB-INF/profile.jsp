@@ -10,10 +10,13 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome, ${sessionScope.user.username}!</h1>
+        <h1>Welcome,<span class="badlister-txt"> ${sessionScope.user.username}
+            </span>!</h1>
         <c:forEach var="bad" items="${baddies}">
         <div class="col-md-6">
-            <h2>${bad.name}</h2>
+           <span class="badlister-txt">
+               <h2>${bad.name}</h2>
+           </span>
             <p>${bad.description}</p>
             <p>${bad.origin}</p>
             <form action="/badview" method="GET">
