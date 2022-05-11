@@ -4,8 +4,9 @@
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
             <c:if test="${user != null}">
-            <a class="navbar-brand" href="/bads">Badlister
-            </a>
+                <a class="navbar-brand" href="/bads">
+                        Badlister
+                </a>
             </c:if>
 
         </div>
