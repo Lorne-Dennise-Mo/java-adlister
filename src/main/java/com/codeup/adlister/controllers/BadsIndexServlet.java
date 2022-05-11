@@ -12,6 +12,10 @@ import java.io.IOException;
 @WebServlet(name = "controllers.BadsIndexServlet", urlPatterns = "/bads")
 public class BadsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
         request.setAttribute("baddies", DaoFactory.getBadsDao().all());
         request.getRequestDispatcher("/WEB-INF/bads/badsindex.jsp").forward(request, response);
     }
