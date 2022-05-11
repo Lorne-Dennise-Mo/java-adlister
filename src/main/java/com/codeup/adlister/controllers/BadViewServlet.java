@@ -23,8 +23,8 @@ public class BadViewServlet extends HttpServlet {
         }
         if (req.getParameter("search")!=null){
             String badSearch=req.getParameter("search");
-            Bad bad1=DaoFactory.getBadsDao().findByBadName(badSearch);
-            req.setAttribute("badsearch",bad1);
+            Bad bad=DaoFactory.getBadsDao().findByBadName(badSearch);
+            req.setAttribute("badsearch",bad);
         }
         req.getRequestDispatcher("WEB-INF/badview.jsp").forward(req, resp);
     }

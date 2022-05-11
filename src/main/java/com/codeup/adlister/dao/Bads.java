@@ -13,6 +13,8 @@ public interface Bads {
 
     Bad findByBadName(String badname);
 
+    String editBad(String name, String description, String origin, String bad);
+
     List<Bad> userBads(User user);
 
     String deleteBad(String gonebad);
