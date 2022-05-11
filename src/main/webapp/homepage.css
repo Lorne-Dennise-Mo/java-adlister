@@ -2,8 +2,9 @@
 body {
     background-color: #000000;
     background-image: url("/img/homepageImage.jpeg");
-    background-position: right bottom;
+    background-position: right 50px bottom 50px;
     background-repeat: no-repeat;
+    background-attachment: fixed;
     color: azure;
 }
 
