@@ -109,6 +109,23 @@ public class MySQLBadsDao implements Bads {
             throw new RuntimeException("Error finding a bad", e);
         }
     }
+    @Override
+    public String editBad(String name,String description,String origin,String bad) {
+        String query = (" UPDATE badlister_db.bads SET name=? , description=?, origin=? WHERE name = ?");
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, name);
+            stmt.setString(2, description);
+            stmt.setString(3, origin);
+            stmt.setString(4, bad);
+            stmt.executeUpdate();
+            return "success";
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a bad", e);
+        }
+    }
+
+
 
     @Override
     public List<Bad> userBads(User user) {
