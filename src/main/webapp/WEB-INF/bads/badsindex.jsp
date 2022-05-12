@@ -11,17 +11,18 @@
 
 <div class="container mx-auto mb-5">
     <h1 class="mb-3">Here Are all the <span class="badlister-txt">Bads!</span></h1>
-
+    <div class="row d-flex flex-wrap">
     <c:forEach var="bad" items="${baddies}">
-        <div class="mb-4 col">
+            <div class="col-6 badcards">
             <h2 class="badlister-txt">${bad.name}</h2>
             <p>${bad.description}</p>
             <p>${bad.origin}</p>
             <form action="/badview" method="GET">
             <button name="badname" value="${bad.name}" class="btn btn-success text-nowrap">view bad</button>
             </form>
-        </div>
+            </div>
     </c:forEach>
+    </div>
 </div>
 
 <a href="/profile">Back to Profile</a> |
