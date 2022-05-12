@@ -24,6 +24,8 @@ Please adhere to this project's `code of conduct`.
 - Edit Bads
 - Delete Bads
 
+## Demo
+<img src="https://cdn.pixabay.com/photo/2020/07/03/19/21/villain-5367336_1280.jpg">
 
 ## Feedback
 
@@ -38,7 +40,9 @@ This was a team project, completed by the above authors.  We are all full-stack 
 
 This team developed a large amount of experince while working with the various Servlets and jsps, to make a functioning database become user-interactive.  We ran into many problems with functionality, but through trial-and-error, were able to accomplish the necessary requirements, as well as a few fun additions.  We have come out of this project more intelligent in understanding coding practices, and gained much needed experience.
  
+ ## Organizational Logo
 <img src="https://avatars.githubusercontent.com/u/105081329?s=400&u=550f68e443ff6a44908ceb7f0637c608410b00a0&v=4">
+
 # Adlister Project
 
 This is the project that we will be going through in the latter part of the Java
