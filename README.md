@@ -17,21 +17,6 @@ See `contributing.md` for ways to get started.
 Please adhere to this project's `code of conduct`.
 
 
-## Demo
-
-
-<img src="image.jpg">
-
-
-## Acknowledgements - [Awesome README](https://github.com/matiassingers/awesome-readme)
- - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
-
-
-## Documentation
-
-[Documentation](https://linktodocumentation)
-
-
 ## Features
 
 - Search Bads   
