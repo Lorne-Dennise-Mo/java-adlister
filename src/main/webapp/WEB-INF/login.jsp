@@ -15,27 +15,23 @@
                 <label for="username">Username</label>
                 <input id="username" name="username" class="form-control" type="text">
             </div>
-            <div class="form-group">
+            <div class="form-group mb-2">
                 <label for="password">Password</label>
                 <input id="password" name="password" class="form-control" type="password">
             </div>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
-            <span id="errorMSG"></span><br>
         </form>
     </div>
 
     <script>
-		function nonExistentUser() {
-			let usernotexists = document.getElementById("usernotexists");
-			usernotexists.innerText = "You have made a typo, or you must register."
-		}
+		(function() {
+
 		function errorMSG() {
 			let pw = document.getElementById("password");
 			let us = document.getElementById("username");
-			let errorMSG = document.getElementById("errorMSG");
+
 			pw.style.backgroundColor = "#ffcccb";
 			us.style.backgroundColor = "#ffcccb";
-			errorMSG.innerText = "*either password or username is not correct.";
 		}
 		function typingInTextBox(){
 			let pw = document.getElementById("password");
@@ -52,9 +48,8 @@
 		<c:if test="${invalidAttempt}">
 		errorMSG();
 		</c:if>
-		<c:if test="${doesNotExist}">
-		nonExistentUser();
-		</c:if>
+		})();
+
     </script>
 </body>
 </html>

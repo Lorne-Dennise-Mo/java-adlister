@@ -5,7 +5,7 @@
         <div class="navbar-header">
             <c:if test="${user != null}">
                 <a class="navbar-brand" href="/bads">
-                        Badlister
+                    <span class="badlister-txt">Bad</span>lister
                 </a>
             </c:if>
 

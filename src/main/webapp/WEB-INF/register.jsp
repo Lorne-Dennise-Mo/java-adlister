@@ -38,7 +38,39 @@
     </div>
 
 
+<script>
+	(function() {
+		function turnRed() {
+			let us = document.getElementById("username");
+			let pw = document.getElementById("password");
+			let cpw = document.getElementById("confirm_password");
 
+			cpw.style.backgroundColor = "#ffcccb";
+			pw.style.backgroundColor = "#ffcccb";
+			us.style.backgroundColor = "#ffcccb";
+		}
+		function typingInTextBox(){
+			let pw = document.getElementById("password");
+			let us = document.getElementById("username");
+			let cpw = document.getElementById("confirm_password");
+			us.addEventListener("keydown",(e)=>{
+				us.style.backgroundColor = "";
+			});
+			pw.addEventListener("keydown",(e)=>{
+				pw.style.backgroundColor = "";
+			});
+			cpw.addEventListener("keydown",(e)=>{
+				cpw.style.backgroundColor = "";
+			});
+
+		}
+
+		typingInTextBox();
+		<c:if test="${userInvalid}">
+		turnRed();
+		</c:if>
+	})();
+</script>
 </body>
 
 

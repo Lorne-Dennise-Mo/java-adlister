@@ -10,10 +10,10 @@
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="container">
-        <h1>Welcome,<span class="badlister-txt"> ${sessionScope.user.username}
+        <h1 class="mb-3">Welcome,<span class="badlister-txt"> ${sessionScope.user.username}
             </span>!</h1>
         <c:forEach var="bad" items="${baddies}">
-        <div class="col-md-6">
+        <div class="mb-4 col">
            <span class="badlister-txt">
                <h2>${bad.name}</h2>
            </span>
@@ -31,8 +31,8 @@
             <input type="submit" class="btn btn-primary btn-block" value="search">
         </div>
     </form>
-    <a href="/bads/create">Add-a-Bad</a>
-    <a href="/bads">See the Bads</a>
+        <a href="/bads/create">Add-a-<span class="badlister-txt">Bad</span></a> |
+    <a href="/bads">See the <span class="badlister-txt">Bad</span>s</a>
 
 </body>
 </html>
