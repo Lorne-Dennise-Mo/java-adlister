@@ -20,8 +20,11 @@ button {
 
 .maindiv, .homepage {
     background-color: #000000;
-}
 
+}
+.badcards {
+
+}
 .badlister-txt, a:hover {
     color: #b9f700;
 }
