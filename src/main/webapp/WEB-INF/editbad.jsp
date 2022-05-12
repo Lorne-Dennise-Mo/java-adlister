@@ -28,7 +28,7 @@
 </div>
 
 <div class="mx-auto w-auto">
-    <h1>Edit bad Bad</h1>
+    <h1>Edit bad <span class="badlister-txt">Bad</span></h1>
 
     <form action="/editbad" method="post">
 

@@ -10,7 +10,7 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 <div class="container">
-    <h1>Add a new Bad</h1>
+    <h1>Add a new <span class="badlister-txt">Bad</span></h1>
     <form action="/bads/create" method="post">
         <div class="form-group">
             <label for="name">name</label>
@@ -27,9 +27,9 @@
         <input type="submit" class="btn btn-block btn-primary">
     </form>
 </div>
-<a href="/profile">Back to Profile</a>
-<a href="/bads">See the Bads</a>
-<a href="/bads/create">Add another Bad</a>
+<a href="/profile">Back to Profile</a> |
+<a href="/bads">See the <span class="badlister-txt">Bads</span></a> |
+<a href="/bads/create">Add another <span class="badlister-txt">Bad</span></a>
 
 </body>
 </html>
